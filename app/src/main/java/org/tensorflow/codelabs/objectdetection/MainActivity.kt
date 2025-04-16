@@ -158,15 +158,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 // Create a data object to display the detection result
                 DetectionResult(it.boundingBox, text)
             }
-            Log.d(TAG, "Results processed.")
+            Log.d(TAG, "Results processed. resultToDisplay size: ${resultToDisplay.size}") // Log processed results size
 
             // Step 6: Draw the detection result on the bitmap and show it.
             Log.d(TAG, "Drawing results...")
             val imgWithResult = drawDetectionResult(bitmap, resultToDisplay)
+            Log.d(TAG, "Drawing complete. Output bitmap: ${imgWithResult.width}x${imgWithResult.height}, Input bitmap: ${bitmap.width}x${bitmap.height}") // Log output size vs input
+
+            // Check if output is different from input (simple reference check)
+            Log.d(TAG, "Input === Output Bitmap: ${bitmap === imgWithResult}")
+
+            Log.d(TAG, "Scheduling UI update...")
             runOnUiThread {
+                Log.d(TAG, "Updating ImageView on UI thread.") // Log inside runOnUiThread
                 inputImageView.setImageBitmap(imgWithResult)
             }
-            Log.d(TAG, "Drawing complete.")
+            Log.d(TAG, "UI update scheduled.")
 
             // Optional: print results to logcat
             Log.d(TAG, "Calling debugPrint...")
@@ -352,9 +359,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             pen.color = Color.RED
             pen.strokeWidth = 8F
             pen.style = Paint.Style.STROKE
-            val box = it.boundingBox
-            canvas.drawRect(box, pen)
 
+            // Clamp the bounding box coordinates to ensure they are within the bitmap bounds
+            val L = max(0f, it.boundingBox.left)
+            val T = max(0f, it.boundingBox.top)
+            val R = min(bitmap.width.toFloat(), it.boundingBox.right)
+            val B = min(bitmap.height.toFloat(), it.boundingBox.bottom)
+            val clampedBox = RectF(L, T, R, B)
+
+            // Draw the clamped bounding box
+            canvas.drawRect(clampedBox, pen)
 
             val tagSize = Rect(0, 0, 0, 0)
 
@@ -365,16 +379,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             pen.textSize = MAX_FONT_SIZE
             pen.getTextBounds(it.text, 0, it.text.length, tagSize)
-            val fontSize: Float = pen.textSize * box.width() / tagSize.width()
+            val fontSize: Float = pen.textSize * clampedBox.width() / tagSize.width()
 
             // adjust the font size so texts are inside the bounding box
             if (fontSize < pen.textSize) pen.textSize = fontSize
 
-            var margin = (box.width() - tagSize.width()) / 2.0F
+            var margin = (clampedBox.width() - tagSize.width()) / 2.0F
             if (margin < 0F) margin = 0F
+            // Draw text near the top-left corner of the clamped bounding box
             canvas.drawText(
-                it.text, box.left + margin,
-                box.top + tagSize.height().times(1F), pen
+                it.text, clampedBox.left + margin,
+                clampedBox.top + tagSize.height().times(1F), pen
             )
         }
         return outputBitmap
