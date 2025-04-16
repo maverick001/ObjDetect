@@ -10,7 +10,7 @@ This project originates from the TensorFlow Lite Object Detection Android Codela
 
 *   Detect objects in static images using a pre-trained TensorFlow Lite model (`model.tflite`).
 *   Select sample images within the app for a test. 
-*   Capture new photos using the device's camera via an Intent.
+*   Capture new photos using the device's back camera.
 *   Display detected objects with bounding boxes and a confidence score.
 
 ## Screenshots
