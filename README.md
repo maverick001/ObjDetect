@@ -1,4 +1,4 @@
-# Android Object Detection App
+# Object Detection App
 
 ## Description
 
