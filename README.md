@@ -18,7 +18,7 @@ This project originates from the TensorFlow Lite Object Detection Android Codela
 
 
 <div>
-  <img src="./screenshots/placeholder1.png" alt="Screenshot 1 Placeholder" width="45%" style="margin-right: 30px;"/>
+  <img src="./screenshots/placeholder1.png" alt="Screenshot 1 Placeholder" width="45%" style="margin-right: 90px;"/>
   <img src="./screenshots/placeholder2.png" alt="Screenshot 2 Placeholder" width="45%"/>
 </div>
 
