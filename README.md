@@ -16,7 +16,6 @@ This project originates from the TensorFlow Lite Object Detection Android Codela
 
 ## Screenshots
 
-*(Add screenshots of your app here to showcase its functionality. Replace placeholders below.)*
 
 <div>
   <img src="./screenshots/placeholder1.png" alt="Screenshot 1 Placeholder" width="45%" style="margin-right: 30px;"/>
@@ -28,7 +27,6 @@ This project originates from the TensorFlow Lite Object Detection Android Codela
 ### Model
 
 *   The app utilizes a TensorFlow Lite object detection model (`model.tflite`) located in the `app/src/main/assets/` directory.
-*   *(Optional: Add specifics if known, e.g., "This is likely a quantized SSD MobileNet model optimized for mobile performance.")*
 
 ### Detection Workflow
 
@@ -65,7 +63,7 @@ To build and run this project locally:
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repository-url>
+    git clone https://github.com/maverick001/ObjDetect.git
     ```
 2.  **Open in Android Studio:** Open the cloned project directory (`<your-repository-url>/starter` or the root if you cloned the starter directory directly) in Android Studio (latest stable version recommended).
 3.  **Gradle Sync:** Allow Android Studio to sync the project with Gradle. This will download the necessary dependencies.
