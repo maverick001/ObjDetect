@@ -56,9 +56,11 @@ This project originates from the TensorFlow Lite Object Detection Android Codela
 *   `androidx.core:core-ktx`: Kotlin extensions for Android core library.
 *   `androidx.lifecycle:lifecycle-scope`: For running background tasks tied to the Activity lifecycle.
 
-## Setup and Installation
+## Setup and Run
 
-To build and run this project locally:
+You can use ObjDect.apk to install this app on any Andoird 11 or above smartphone or tablet. 
+
+Or, to build and run this project locally with Android Studio Meerkat:
 
 1.  **Clone the repository:**
     ```bash
