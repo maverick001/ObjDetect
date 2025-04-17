@@ -2,7 +2,7 @@
 
 ## Description
 
-This Android application demonstrates real-time object detection using EfficientDet-Lite model. It allows users to select local images from phone's internal drive or capture new photos using the back camera, and then identifies objects instantly on the photo, and displays their labels along with confidence scores.
+This Android application demonstrates real-time object detection using EfficientDet-Lite model. It allows users to select local images from phone's internal drive or capture new photos using the back camera, and then identifies objects instantly on the photo, and displays their labels with calculated confidence scores.
 
 
 ## Features
