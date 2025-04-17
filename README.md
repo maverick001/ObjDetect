@@ -63,6 +63,7 @@ To build and run this project locally:
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/maverick001/ObjDetect.git
+    cd ObjDect
     ```
 2.  **Open in Android Studio:** Open the cloned project directory (`<your-repository-url>/starter` or the root if you cloned the starter directory directly) in Android Studio (latest stable version recommended).
 3.  **Gradle Sync:** Allow Android Studio to sync the project with Gradle. This will download the necessary dependencies.
