@@ -69,8 +69,6 @@ To build and run this project locally:
 4.  **Build:** Build the project using **Build > Make Project**.
 5.  **Run:** Run the app on an Android emulator or a physical Android device (connected via USB with debugging enabled).
 
-    *   **Note:** You might need to configure antivirus exclusions for the project directory and the `.gradle` cache directory (`C:\Users\<your_username>\.gradle` on Windows) to avoid potential build issues related to file locking.
-
 ## License
 
 This project is licensed under the Apache License, Version 2.0. See the `LICENSE` file (if one exists) or individual file headers for details. 
