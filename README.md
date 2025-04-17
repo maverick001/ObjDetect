@@ -2,13 +2,12 @@
 
 ## Description
 
-This is an Android application demonstrating real-time object detection using TensorFlow Lite. The app allows users to select preset images or capture new photos using the device camera and then identifies objects within the image, drawing bounding boxes around them and displaying their labels along with confidence scores.
+This Android application demonstrates real-time object detection using EfficientDet-Lite model. The app allows users to select preset images or capture new photos using the device camera and then identifies objects within the image, drawing bounding boxes around them and displaying their labels along with confidence scores.
 
-This project originates from the TensorFlow Lite Object Detection Android Codelab and has been modified with UI enhancements and layout adjustments.
 
 ## Features
 
-*   Detect objects in static images using a pre-trained TensorFlow Lite model (`model.tflite`).
+*   Detect objects in static images using a pre-trained EfficientDet-Lite model.
 *   Select sample images within the app for a test. 
 *   Capture new photos using the device's back camera.
 *   Display detected objects with bounding boxes and a confidence score.
