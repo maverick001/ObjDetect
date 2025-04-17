@@ -25,7 +25,7 @@ This project originates from the TensorFlow Lite Object Detection Android Codela
 
 ### Model
 
-*   The app utilizes a TensorFlow Lite object detection model (`model.tflite`) located in the `app/src/main/assets/` directory.
+*   The app utilizes EfficientDet-Lite (TFLite) model to perform object detection tasks from local photos or photos taken from Andoird camera.
 
 ### Detection Workflow
 
